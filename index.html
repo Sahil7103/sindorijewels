@@ -586,6 +586,100 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-4
   .footer-bottom { justify-content: flex-start; }
 }
 
+/* ---------- Responsive hardening ---------- */
+html, body { width: 100%; max-width: 100%; }
+body { overflow-wrap: break-word; }
+iframe, svg, video { max-width: 100%; }
+.wrap, .bar, main, section, footer { min-width: 0; }
+
+@media (max-width: 1180px) {
+  .site-header .bar { gap: 1rem; }
+  .nav { gap: clamp(0.8rem, 1.4vw, 1.25rem); }
+  .nav a { font-size: 0.7rem; letter-spacing: 0.11em; }
+  .header-cta { gap: 0.75rem; }
+  .header-phone { font-size: 0.74rem; }
+}
+
+@media (max-width: 900px) {
+  .site-header .bar { position: relative; z-index: 101; }
+  .brand, .header-cta { position: relative; z-index: 101; }
+  body.menu-open { overflow: hidden; }
+  .mobile-panel { height: 100dvh; overflow-y: auto; overscroll-behavior: contain; }
+
+  .hero { min-height: 720px; }
+  .hero-inner { padding-top: clamp(8rem, 18vh, 11rem); padding-bottom: 7rem; }
+  .hero-media img { object-position: 58% center; }
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .split > * { min-width: 0; }
+  .split.reverse .split-media { order: 0; }
+  .frame { max-height: 760px; }
+  .founder-media { width: min(100%, 620px); margin-inline: auto; }
+
+  .visit-info dd, .footer-col .txt, .footer-col a { overflow-wrap: anywhere; }
+  .visit-map, .visit-map iframe { min-height: 300px; }
+}
+
+@media (max-width: 700px) {
+  :root { --gutter: clamp(1rem, 5vw, 1.6rem); --section-y: clamp(3.5rem, 12vw, 5rem); }
+  .display { font-size: clamp(2.65rem, 12vw, 4.4rem); }
+  .h-section { font-size: clamp(2rem, 9vw, 3rem); }
+
+  .hero { min-height: 100svh; }
+  .hero-inner { padding-top: 8.5rem; padding-bottom: 6.5rem; }
+  .hero .display { margin-block: 1rem 1.2rem; }
+  .hero .lede { font-size: 1rem; max-width: 30rem; }
+  .hero-scroll { display: none; }
+
+  .assurance .item { padding: 1.25rem 0.6rem; }
+  .assurance .item .k { font-size: 1.2rem; }
+  .assurance .item .v { font-size: 0.56rem; letter-spacing: 0.14em; }
+
+  .filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.5rem; margin-block: 1.7rem 2.2rem;
+    scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+  .filter { flex: 0 0 auto; }
+
+  .timeline::before { left: 20px; }
+  .gen { grid-template-columns: 40px minmax(0, 1fr); gap: 1rem; padding-block: 2rem; }
+  .gen .node { width: 40px; height: 40px; }
+  .gen .node .num { font-size: 1.1rem; }
+  .gen .node::after { inset: -4px; }
+  .gen-media { width: 100%; max-width: none; margin-bottom: 1rem; }
+
+  .rating-note { text-align: center; }
+  .visit-actions, .cta-band .actions { align-items: stretch; }
+  .visit-actions .btn, .cta-band .actions .btn { flex: 1 1 220px; justify-content: center; }
+  .footer-bottom .fine { flex-wrap: wrap; gap: 0.6rem 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  .site-header .bar { padding-block: 0.75rem; }
+  .brand-logo { font-size: 1.08rem; letter-spacing: 0.025em; }
+  .site-header.scrolled .brand-logo { font-size: 1.05rem; }
+  .mobile-panel a { font-size: clamp(1.65rem, 8vw, 2.1rem); }
+
+  .hero-media img { object-position: 62% center; }
+  .hero-actions { flex-direction: column; gap: 0.75rem; margin-top: 1.6rem; }
+  .hero-actions .btn { width: 100%; }
+  .assurance .row { grid-template-columns: 1fr 1fr; }
+  .assurance .item:nth-child(odd) { border-left: 0; }
+  .assurance .item:nth-child(n+3) { border-top: 1px solid var(--line-dark); }
+
+  .frame::after { inset: 7px; }
+  .product-media::after { inset: 8px; }
+  .product-body .foot { align-items: flex-start; gap: 0.75rem; }
+  .product-body .price { font-size: 1.05rem; }
+  .visit-map, .visit-map iframe { min-height: 260px; }
+  .footer-brand .brand-logo { font-size: 1.65rem; }
+}
+
+@media (max-height: 620px) and (orientation: landscape) {
+  .hero { min-height: 620px; }
+  .hero-inner { padding-top: 7rem; padding-bottom: 3rem; }
+  .hero-scroll { display: none; }
+  .mobile-panel { justify-content: flex-start; padding-top: 6rem; }
+  .mobile-panel a { font-size: 1.55rem; }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
