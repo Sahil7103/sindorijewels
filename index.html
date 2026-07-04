@@ -319,6 +319,25 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-4
   color: var(--on-dark); overflow: hidden; }
 .hero-media { position: absolute; inset: 0; z-index: -2; }
 .hero-media .placeholder, .hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.025);
+  transition: opacity 1.1s var(--ease), transform 6s ease-out;
+}
+.hero-slide.is-active { opacity: 1; transform: scale(1); }
+.hero-dots {
+  position: absolute;
+  right: var(--gutter);
+  bottom: clamp(2rem, 6vh, 4.5rem);
+  z-index: 3;
+  display: flex;
+  gap: 0.55rem;
+}
+.hero-dot { width: 28px; height: 18px; position: relative; }
+.hero-dot::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--on-dark-soft); transition: background .35s, transform .35s; }
+.hero-dot.is-active::after { background: var(--gold-bright); transform: scaleY(2); }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
@@ -859,8 +878,10 @@ main > section[id] { scroll-margin-top: 96px; }
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-media">
-    <!-- Replace src with your best bridal / gold set photo (landscape, ~1600px wide). -->
-    <img src="assets/Screenshot 2026-07-03 223248.png" alt="Inside the S. Indori Jewels showroom on CG Road, Ahmedabad" fetchpriority="high" decoding="async" />
+    <img class="hero-slide is-active" src="assets/showroom-223248.jpg" alt="S. Indori Jewels reception" fetchpriority="high" decoding="async" />
+    <img class="hero-slide" src="assets/showroom-223225.jpg" alt="Jewellery displays inside S. Indori Jewels" decoding="async" />
+    <img class="hero-slide" src="assets/showroom-223157.jpg" alt="S. Indori Jewels showroom interior" decoding="async" />
+    <img class="hero-slide" src="assets/showroom-223311.jpg" alt="S. Indori Jewels storefront" decoding="async" />
   </div>
   <div class="wrap hero-inner">
     <span class="eyebrow" data-reveal>Goldsmiths of Ahmedabad &middot; Since 1960</span>
@@ -870,6 +891,12 @@ main > section[id] { scroll-margin-top: 96px; }
       <a class="btn btn-solid" href="#collections">Explore collections</a>
       <a class="btn btn-ghost" href="#legacy">Our legacy</a>
     </div>
+  </div>
+  <div class="hero-dots" aria-label="Showroom image carousel">
+    <button class="hero-dot is-active" type="button" aria-label="Show image 1"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 2"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 3"></button>
+    <button class="hero-dot" type="button" aria-label="Show image 4"></button>
   </div>
   <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><span class="rule"></span></div>
 </section>
@@ -1371,6 +1398,34 @@ main > section[id] { scroll-margin-top: 96px; }
     document.body.classList.remove("splash-active");
     window.setTimeout(function () { splash.remove(); }, 800);
   }, 1500);
+
+  /* ---- Hero showroom carousel ---- */
+  var hero = document.querySelector(".hero");
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".hero-slide"));
+  var dots = Array.prototype.slice.call(document.querySelectorAll(".hero-dot"));
+  var currentSlide = 0;
+  var carouselTimer;
+  function showSlide(index) {
+    currentSlide = (index + slides.length) % slides.length;
+    slides.forEach(function (slide, i) { slide.classList.toggle("is-active", i === currentSlide); });
+    dots.forEach(function (dot, i) { dot.classList.toggle("is-active", i === currentSlide); });
+  }
+  function startCarousel() {
+    if (slides.length < 2 || document.hidden) return;
+    window.clearInterval(carouselTimer);
+    carouselTimer = window.setInterval(function () { showSlide(currentSlide + 1); }, 4500);
+  }
+  dots.forEach(function (dot, i) {
+    dot.addEventListener("click", function () { showSlide(i); startCarousel(); });
+  });
+  if (hero) {
+    hero.addEventListener("mouseenter", function () { window.clearInterval(carouselTimer); });
+    hero.addEventListener("mouseleave", startCarousel);
+  }
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) window.clearInterval(carouselTimer); else startCarousel();
+  });
+  startCarousel();
 
   /* ---- Hallmark seal markup (reused as logo + dividers) ---- */
   window.SIJ = window.SIJ || {};
