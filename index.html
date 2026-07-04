@@ -437,10 +437,10 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-4
 .special-card:hover .special-media img { transform: scale(1.035); }
 .special-card:first-child .special-media img { object-position: center 38%; }
 .special-body { padding: clamp(1.5rem, 3vw, 2.25rem); display: flex; flex-direction: column; justify-content: center; }
-.special-number { color: var(--gold-deep); font: italic 1rem var(--display); }
-.special-body h3 { font-size: clamp(1.8rem, 3vw, 2.65rem); margin: 0.45rem 0 0.75rem; }
-.special-body p { color: var(--on-light-soft); font-size: 0.96rem; }
-.special-body .link-underline { align-self: flex-start; margin-top: 1.3rem; color: var(--gold-deep); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.special-number { color: #76501F; font: italic 1rem var(--display); font-weight: 600; }
+.special-body h3 { color: #241812; font-size: clamp(1.8rem, 3vw, 2.65rem); margin: 0.45rem 0 0.75rem; }
+.special-body p { color: #4F3D31; font-size: 0.96rem; font-weight: 400; }
+.special-body .link-underline { align-self: flex-start; margin-top: 1.3rem; color: #6B471B; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
 .special-cta { margin-top: clamp(2.5rem, 6vw, 4.5rem); text-align: center; }
 .product { position: relative; }
 .product-media {
@@ -812,7 +812,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <div class="splash-screen" id="splash-screen" aria-label="S. Indori Jewels">
   <div class="splash-content">
     <div class="splash-gem" aria-hidden="true"></div>
-    <img class="splash-logo" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" />
+    <img decoding="async" class="splash-logo" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" />
     <div class="splash-rule" aria-hidden="true"></div>
     <div class="splash-tagline">Goldsmiths of Ahmedabad</div>
   </div>
@@ -822,7 +822,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <header class="site-header">
   <div class="wrap bar">
     <a class="brand" href="#home" aria-label="S. Indori Jewels &mdash; Home">
-      <img class="brand-logo" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" />
+      <img decoding="async" class="brand-logo" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" />
     </a>
     <nav class="nav" aria-label="Primary">
       <a data-nav href="#home">Home</a>
@@ -860,7 +860,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <section class="hero">
   <div class="hero-media">
     <!-- Replace src with your best bridal / gold set photo (landscape, ~1600px wide). -->
-    <img src="assets/Screenshot 2026-07-03 223248.png" alt="Inside the S. Indori Jewels showroom on CG Road, Ahmedabad" />
+    <img src="assets/Screenshot 2026-07-03 223248.png" alt="Inside the S. Indori Jewels showroom on CG Road, Ahmedabad" fetchpriority="high" decoding="async" />
   </div>
   <div class="wrap hero-inner">
     <span class="eyebrow" data-reveal>Goldsmiths of Ahmedabad &middot; Since 1960</span>
@@ -892,7 +892,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <!-- ============ SEAL DIVIDER (signature) ============ -->
 <div class="wrap seal-divider" aria-hidden="true">
   <span class="rule left"></span>
-  <span class="hallmark"><img src="assets/logo-clean.jpeg" alt="S. Indori Jewels" /></span>
+  <span class="hallmark"><img loading="lazy" decoding="async" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" /></span>
   <span class="rule right"></span>
 </div>
 
@@ -906,15 +906,15 @@ main > section[id] { scroll-margin-top: 96px; }
     </div>
     <div class="grid-collections" style="margin-top: clamp(2rem,5vw,3.5rem)">
       <a class="product" href="#collections" data-reveal>
-        <div class="product-media"><img data-photo src="assets/collection-bridal.jpeg" alt="Bridal & wedding sets" data-ph-note="Bridal collection" /></div>
+        <div class="product-media"><img loading="lazy" decoding="async" data-photo src="assets/collection-bridal.jpeg" alt="Bridal & wedding sets" data-ph-note="Bridal collection" /></div>
         <div class="product-body"><span class="cat">Signature</span><h3>Bridal &amp; Wedding</h3><p class="desc">Complete kundan and polki sets, from maang tikka to haath phool.</p></div>
       </a>
       <a class="product" href="#collections" data-reveal data-delay="1">
-        <div class="product-media"><img data-photo src="assets/collection-gold.jpeg" alt="Everyday gold" data-ph-note="Gold collection" /></div>
+        <div class="product-media"><img loading="lazy" decoding="async" data-photo src="assets/collection-gold.jpeg" alt="Everyday gold" data-ph-note="Gold collection" /></div>
         <div class="product-body"><span class="cat">Daily wear</span><h3>Everyday Gold</h3><p class="desc">Chains, bangles and studs in 22K, made light enough to live in.</p></div>
       </a>
       <a class="product" href="#collections" data-reveal data-delay="2">
-        <div class="product-media"><img data-photo src="assets/collection-diamond.jpeg" alt="Diamond & solitaire" data-ph-note="Diamond collection" /></div>
+        <div class="product-media"><img loading="lazy" decoding="async" data-photo src="assets/collection-diamond.jpeg" alt="Diamond & solitaire" data-ph-note="Diamond collection" /></div>
         <div class="product-body"><span class="cat">Fine jewellery</span><h3>Diamond &amp; Solitaire</h3><p class="desc">Certified diamonds set in contemporary and classic mounts.</p></div>
       </a>
     </div>
@@ -932,23 +932,23 @@ main > section[id] { scroll-margin-top: 96px; }
     </div>
     <div class="special-grid">
       <article class="special-card" data-reveal>
-        <div class="special-media"><img src="assets/Indori Kada.jpeg" alt="Indori Kada" /></div>
+        <div class="special-media"><img loading="lazy" decoding="async" src="assets/Indori Kada.jpeg" alt="Indori Kada" /></div>
         <div class="special-body"><span class="special-number">Signature 01</span><h3>Indori Kada</h3><p>A defining S. Indori speciality, recognised for its confident form, balanced detailing and an elegant fit on the wrist.</p><a class="link-underline" href="tel:+917574864891">Enquire about this piece</a></div>
       </article>
       <article class="special-card" data-reveal>
-        <div class="special-media"><img src="assets/chitrai kam kada.png" alt="Chitari Kam Kada" /></div>
+        <div class="special-media"><img loading="lazy" decoding="async" src="assets/chitrai-kam-kada-optimized.jpg" alt="Chitari Kam Kada" /></div>
         <div class="special-body"><span class="special-number">Signature 02</span><h3>Chitari Kam</h3><p>Fine decorative workmanship brought to life through patient hand detailing, giving the surface depth and crafted character.</p><a class="link-underline" href="tel:+917574864891">Enquire about this piece</a></div>
       </article>
       <article class="special-card" data-reveal data-delay="1">
-        <div class="special-media"><img src="assets/kakani-kada-clean.png" alt="Kakani Kada" /></div>
+        <div class="special-media"><img loading="lazy" decoding="async" src="assets/kakani-kada-optimized.jpg" alt="Kakani Kada" /></div>
         <div class="special-body"><span class="special-number">Signature 03</span><h3>Kakani Kada</h3><p>A traditional kada style interpreted with careful proportions and precise finishing for presence and wearability.</p><a class="link-underline" href="tel:+917574864891">Enquire about this piece</a></div>
       </article>
       <article class="special-card" data-reveal>
-        <div class="special-media"><img src="assets/gujari-kada-clean.png" alt="Gujri Kada" /></div>
+        <div class="special-media"><img loading="lazy" decoding="async" src="assets/gujari-kada-optimized.jpg" alt="Gujri Kada" /></div>
         <div class="special-body"><span class="special-number">Signature 04</span><h3>Gujri Kada</h3><p>A richly expressive design with an old-world sensibility for those who appreciate visible craft and cultural character.</p><a class="link-underline" href="tel:+917574864891">Enquire about this piece</a></div>
       </article>
       <article class="special-card" data-reveal data-delay="1">
-        <div class="special-media"><img src="assets/gulab-phool-kada-clean.png" alt="Gulab Phool Kada" /></div>
+        <div class="special-media"><img loading="lazy" decoding="async" src="assets/gulab-phool-kada-optimized.jpg" alt="Gulab Phool Kada" /></div>
         <div class="special-body"><span class="special-number">Signature 05</span><h3>Gulab Phool Kada</h3><p>Floral inspiration centred on the timeless rose, translated into an ornamental kada with graceful detail.</p><a class="link-underline" href="tel:+917574864891">Enquire about this piece</a></div>
       </article>
     </div>
@@ -960,7 +960,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <section class="section">
   <div class="wrap split reverse">
     <div class="split-media" data-reveal>
-      <div class="frame"><img data-photo src="assets/designer_diamond.jpeg" alt="Setting stones by hand in the S. Indori Jewels atelier" data-ph-note="Craft / atelier photo" /></div>
+      <div class="frame"><img loading="lazy" decoding="async" data-photo src="assets/designer_diamond.jpeg" alt="Setting stones by hand in the S. Indori Jewels atelier" data-ph-note="Craft / atelier photo" /></div>
     </div>
     <div class="split-body" data-reveal data-delay="1">
       <span class="eyebrow">The craft</span>
@@ -1048,7 +1048,7 @@ main > section[id] { scroll-margin-top: 96px; }
   <div class="wrap grid-products">
 
     <article class="product" data-cat="bridal" data-reveal>
-      <div class="product-media"><span class="tag">Signature</span><img data-photo src="assets/kundan-set.jpeg" alt="Kundan Bridal Set" data-ph-note="Kundan bridal set" /></div>
+      <div class="product-media"><span class="tag">Signature</span><img loading="lazy" decoding="async" data-photo src="assets/kundan-set.jpeg" alt="Kundan Bridal Set" data-ph-note="Kundan bridal set" /></div>
       <div class="product-body">
         <span class="cat">Bridal</span><h3>Rajwadi Kundan Set</h3>
         <p class="desc">Uncut-stone necklace, jhumkas and tikka in 22K gold, finished with meenakari on the reverse.</p>
@@ -1057,7 +1057,7 @@ main > section[id] { scroll-margin-top: 96px; }
     </article>
 
     <article class="product" data-cat="bridal" data-reveal data-delay="1">
-      <div class="product-media"><img data-photo src="assets/polki-choker.jpeg" alt="Polki Choker" data-ph-note="Polki choker" /></div>
+      <div class="product-media"><img loading="lazy" decoding="async" data-photo src="assets/polki-choker.jpeg" alt="Polki Choker" data-ph-note="Polki choker" /></div>
       <div class="product-body">
         <span class="cat">Bridal</span><h3>Polki Choker &amp; Rani Haar</h3>
         <p class="desc">A layered choker with a detachable long haar &mdash; two looks from one set.</p>
@@ -1066,7 +1066,7 @@ main > section[id] { scroll-margin-top: 96px; }
     </article>
 
     <article class="product" data-cat="gold" data-reveal data-delay="2">
-      <div class="product-media"><img data-photo src="assets/gold-bangles.jpeg" alt="Gold Bangles" data-ph-note="Gold bangles" /></div>
+      <div class="product-media"><img loading="lazy" decoding="async" data-photo src="assets/gold-bangles.jpeg" alt="Gold Bangles" data-ph-note="Gold bangles" /></div>
       <div class="product-body">
         <span class="cat">Everyday gold</span><h3>Textured Gold Bangles</h3>
         <p class="desc">A stackable pair in 22K, hand-textured for grip and shine. Sold singly or as a set.</p>
@@ -1075,7 +1075,7 @@ main > section[id] { scroll-margin-top: 96px; }
     </article>
 
     <article class="product" data-cat="diamond" data-reveal>
-      <div class="product-media"><span class="tag">Certified</span><img data-photo src="assets/solitaire-ring.jpeg" alt="Solitaire Ring" data-ph-note="Solitaire ring" /></div>
+      <div class="product-media"><span class="tag">Certified</span><img loading="lazy" decoding="async" data-photo src="assets/solitaire-ring.jpeg" alt="Solitaire Ring" data-ph-note="Solitaire ring" /></div>
       <div class="product-body">
         <span class="cat">Diamond</span><h3>Solitaire Engagement Ring</h3>
         <p class="desc">A certified round-brilliant solitaire in an 18K six-prong setting. Choose your carat and colour.</p>
@@ -1084,7 +1084,7 @@ main > section[id] { scroll-margin-top: 96px; }
     </article>
 
     <article class="product" data-cat="gold" data-reveal data-delay="1">
-      <div class="product-media"><img data-photo src="assets/gold-chain.jpeg" alt="Gold Chain" data-ph-note="Gold chain" /></div>
+      <div class="product-media"><img loading="lazy" decoding="async" data-photo src="assets/gold-chain.jpeg" alt="Gold Chain" data-ph-note="Gold chain" /></div>
       <div class="product-body">
         <span class="cat">Everyday gold</span><h3>Fine Rope Chain</h3>
         <p class="desc">A lightweight 22K chain that sits well on its own or holds a pendant. Available in several lengths.</p>
@@ -1093,7 +1093,7 @@ main > section[id] { scroll-margin-top: 96px; }
     </article>
 
     <article class="product" data-cat="diamond" data-reveal data-delay="2">
-      <div class="product-media"><img data-photo src="assets/diamond-studs.jpeg" alt="Diamond Studs" data-ph-note="Diamond studs" /></div>
+      <div class="product-media"><img loading="lazy" decoding="async" data-photo src="assets/diamond-studs.jpeg" alt="Diamond Studs" data-ph-note="Diamond studs" /></div>
       <div class="product-body">
         <span class="cat">Diamond</span><h3>Everyday Diamond Studs</h3>
         <p class="desc">Certified diamonds in a low-profile setting made to be worn every single day.</p>
@@ -1102,7 +1102,7 @@ main > section[id] { scroll-margin-top: 96px; }
     </article>
 
     <article class="product" data-cat="bridal" data-reveal>
-      <div class="product-media"><img data-photo src="assets/jhumka.jpeg" alt="Temple Jhumkas" data-ph-note="Temple jhumkas" /></div>
+      <div class="product-media"><img loading="lazy" decoding="async" data-photo src="assets/jhumka.jpeg" alt="Temple Jhumkas" data-ph-note="Temple jhumkas" /></div>
       <div class="product-body">
         <span class="cat">Bridal</span><h3>Temple Jhumkas</h3>
         <p class="desc">South-inspired 22K jhumkas with fine granulation and a comfortable everyday weight.</p>
@@ -1111,7 +1111,7 @@ main > section[id] { scroll-margin-top: 96px; }
     </article>
 
     <article class="product" data-cat="custom" data-reveal data-delay="1">
-      <div class="product-media"><span class="tag">Bespoke</span><img data-photo src="assets/mangalsutra.jpeg" alt="Modern Mangalsutra" data-ph-note="Mangalsutra" /></div>
+      <div class="product-media"><span class="tag">Bespoke</span><img loading="lazy" decoding="async" data-photo src="assets/mangalsutra.jpeg" alt="Modern Mangalsutra" data-ph-note="Mangalsutra" /></div>
       <div class="product-body">
         <span class="cat">Custom</span><h3>Modern Mangalsutra</h3>
         <p class="desc">A slim, contemporary mangalsutra with a diamond pendant &mdash; designed with you from a sketch.</p>
@@ -1120,7 +1120,7 @@ main > section[id] { scroll-margin-top: 96px; }
     </article>
 
     <article class="product" data-cat="custom" data-reveal data-delay="2">
-      <div class="product-media"><img data-photo src="assets/Heirloom Redesign.jpeg" alt="Heirloom Redesign" data-ph-note="Heirloom redesign" /></div>
+      <div class="product-media"><img loading="lazy" decoding="async" data-photo src="assets/Heirloom Redesign.jpeg" alt="Heirloom Redesign" data-ph-note="Heirloom redesign" /></div>
       <div class="product-body">
         <span class="cat">Custom</span><h3>Heirloom Redesign</h3>
         <p class="desc">Bring in an old piece; we re-set the stones and gold into something you'll actually wear.</p>
@@ -1165,7 +1165,7 @@ main > section[id] { scroll-margin-top: 96px; }
 
       <!-- Generation I -->
       <div class="gen" data-reveal>
-        <div class="gen-media"><div class="frame"><img data-photo src="assets/founder-1.jpg" alt="Founder, first generation" data-ph-note="First-generation photo" /></div></div>
+        <div class="gen-media"><div class="frame"><img loading="lazy" decoding="async" data-photo src="assets/founder-1.jpg" alt="Founder, first generation" data-ph-note="First-generation photo" /></div></div>
         <div class="node"><span class="num">I</span></div>
         <div class="gen-body">
           <span class="era">1960 &mdash; The founder</span>
@@ -1184,12 +1184,12 @@ main > section[id] { scroll-margin-top: 96px; }
           <p class="muted">The next generation took the same bench and widened it &mdash; bringing in diamonds and certification, learning new techniques, and building the relationships with families who still return to us for every wedding in the house.</p>
         </div>
         <div class="node"><span class="num">II</span></div>
-        <div class="gen-media"><div class="frame"><img data-photo src="assets/founder-2.jpeg" alt="Second generation" data-ph-note="Second-generation photo" /></div></div>
+        <div class="gen-media"><div class="frame"><img loading="lazy" decoding="async" data-photo src="assets/founder-2.jpeg" alt="Second generation" data-ph-note="Second-generation photo" /></div></div>
       </div>
 
       <!-- Generation III -->
       <div class="gen" data-reveal>
-        <div class="gen-media"><div class="frame"><img data-photo src="assets/founder-2.jpeg" alt="Third generation, today" data-ph-note="Third-generation photo" /></div></div>
+        <div class="gen-media"><div class="frame"><img loading="lazy" decoding="async" data-photo src="assets/founder-2.jpeg" alt="Third generation, today" data-ph-note="Third-generation photo" /></div></div>
         <div class="node"><span class="num">III</span></div>
         <div class="gen-body">
           <span class="era">Today &mdash; The third generation</span>
@@ -1206,7 +1206,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <!-- ============ SEAL DIVIDER ============ -->
 <div class="wrap seal-divider" aria-hidden="true">
   <span class="rule left"></span>
-  <span class="hallmark"><img src="assets/logo-clean.jpeg" alt="S. Indori Jewels" /></span>
+  <span class="hallmark"><img loading="lazy" decoding="async" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" /></span>
   <span class="rule right"></span>
 </div>
 
@@ -1220,7 +1220,7 @@ main > section[id] { scroll-margin-top: 96px; }
       <p class="sig"> The Indori family<span class="sig-role">S. Indori Jewels, Ahmedabad</span></p>
     </div>
     <div class="split-media" data-reveal data-delay="1">
-      <div class="frame"><img data-photo src="assets/Screenshot 2026-07-03 223225.png" alt="The family today at the store" data-ph-note="Family photo" /></div>
+      <div class="frame"><img loading="lazy" decoding="async" data-photo src="assets/Screenshot 2026-07-03 223225.png" alt="The family today at the store" data-ph-note="Family photo" /></div>
     </div>
   </div>
 </section>
@@ -1336,7 +1336,7 @@ main > section[id] { scroll-margin-top: 96px; }
   <div class="wrap footer-top">
     <div class="footer-brand">
       <a class="brand" href="#home" aria-label="S. Indori Jewels &mdash; Home">
-      <img class="brand-logo" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" />
+      <img decoding="async" class="brand-logo" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" />
     </a>
       <p>A three-generation family jeweller, hand-crafting hallmarked gold and fine jewellery on CG Road, Ahmedabad.</p>
       <div class="footer-socials">
@@ -1370,7 +1370,7 @@ main > section[id] { scroll-margin-top: 96px; }
     splash.classList.add("is-hidden");
     document.body.classList.remove("splash-active");
     window.setTimeout(function () { splash.remove(); }, 800);
-  }, 3000);
+  }, 1500);
 
   /* ---- Hallmark seal markup (reused as logo + dividers) ---- */
   window.SIJ = window.SIJ || {};
@@ -1418,7 +1418,7 @@ main > section[id] { scroll-margin-top: 96px; }
   }
 
   /* ---- Placeholder tiles for images without real files yet ---- */
-  var sealSVG = '<img src="assets/logo-clean.jpeg" alt="" aria-hidden="true" />';
+  var sealSVG = '<img loading="lazy" decoding="async" src="assets/logo-clean.jpeg" alt="" aria-hidden="true" />';
 
   function mountPlaceholder(img) {
     if (!img || img.dataset.phDone) return;
