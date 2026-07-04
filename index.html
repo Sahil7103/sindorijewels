@@ -101,11 +101,10 @@ body.splash-active { overflow: hidden; }
   animation: splashGem 0.75s 0.3s var(--ease) forwards;
 }
 .splash-logo {
-  font-family: "Baskvill Logo", Georgia, serif;
-  color: var(--on-dark);
-  font-size: clamp(2rem, 6vw, 4.8rem);
-  line-height: 1;
-  letter-spacing: 0.12em;
+  display: block;
+  width: min(620px, 82vw);
+  height: auto;
+  margin-inline: auto;
   opacity: 0;
   transform: translateY(18px);
   animation: splashLogo 1s 0.55s var(--ease) forwards;
@@ -202,7 +201,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; line-height: 1.0
 
 /* ---------- Hallmark seal (signature) ---------- */
 .hallmark { display: inline-block; color: var(--gold); }
-.hallmark svg { display: block; width: 100%; height: 100%; }
+.hallmark svg, .hallmark img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .hallmark .ring-text { fill: currentColor; font-family: var(--body); font-weight: 500;
   letter-spacing: 0.18em; text-transform: uppercase; }
 .hallmark .monogram { fill: currentColor; font-family: var(--display); font-weight: 500; }
@@ -375,7 +374,7 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-4
 /* ---------- Section divider seal ---------- */
 .seal-divider { display: flex; align-items: center; justify-content: center; gap: 1.4rem;
   color: var(--gold); padding-block: clamp(2rem, 5vw, 3.5rem); }
-.seal-divider .hallmark { width: 58px; height: 58px; flex: none; }
+.seal-divider .hallmark { width: 150px; height: 62px; flex: none; }
 .seal-divider .rule { height: 1px; width: min(28vw, 220px);
   background: linear-gradient(90deg, transparent, var(--line-dark)); }
 .seal-divider .rule.left { background: linear-gradient(90deg, transparent, var(--line-dark)); }
@@ -719,18 +718,17 @@ main > section[id] { scroll-margin-top: 96px; }
   font-display: swap;
 }
 .brand-logo {
-  font-family: "Baskvill Logo", Georgia, serif;
-  color: var(--on-dark);
-  font-size: 1.75rem;
-  line-height: 1;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
+  display: block;
+  width: clamp(155px, 16vw, 220px);
+  height: 54px;
+  object-fit: contain;
+  object-position: left center;
 }
-.site-header.scrolled .brand-logo { color: var(--gold-bright); font-size: 1.6rem; }
-.footer-brand .brand-logo { font-size: 2rem; }
+.site-header.scrolled .brand-logo { width: clamp(145px, 15vw, 205px); }
+.footer-brand .brand-logo { width: min(260px, 100%); height: auto; }
 @media (max-width: 560px){
-  .brand-logo { font-size: 1.3rem; letter-spacing: 0.04em; }
-  .site-header.scrolled .brand-logo { font-size: 1.2rem; }
+  .brand-logo { width: 145px; height: 46px; }
+  .site-header.scrolled .brand-logo { width: 138px; }
 }
 
 .founder-media { display: grid; gap: 1.15rem; }
@@ -755,7 +753,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <div class="splash-screen" id="splash-screen" aria-label="S. Indori Jewels">
   <div class="splash-content">
     <div class="splash-gem" aria-hidden="true"></div>
-    <div class="splash-logo">S. INDORI JEWELS</div>
+    <img class="splash-logo" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" />
     <div class="splash-rule" aria-hidden="true"></div>
     <div class="splash-tagline">Goldsmiths of Ahmedabad</div>
   </div>
@@ -765,7 +763,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <header class="site-header">
   <div class="wrap bar">
     <a class="brand" href="#home" aria-label="S. Indori Jewels &mdash; Home">
-      <span class="brand-logo">S. INDORI JEWELS</span>
+      <img class="brand-logo" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" />
     </a>
     <nav class="nav" aria-label="Primary">
       <a data-nav href="#home">Home</a>
@@ -833,9 +831,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <!-- ============ SEAL DIVIDER (signature) ============ -->
 <div class="wrap seal-divider" aria-hidden="true">
   <span class="rule left"></span>
-  <span class="hallmark">
-    <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="0.5"/><circle cx="50" cy="6" r="1.6" fill="currentColor"/><circle cx="50" cy="94" r="1.6" fill="currentColor"/><circle cx="6" cy="50" r="1.6" fill="currentColor"/><circle cx="94" cy="50" r="1.6" fill="currentColor"/><text x="50" y="60" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="500" font-size="27" fill="currentColor">SIJ</text></svg>
-  </span>
+  <span class="hallmark"><img src="assets/logo-clean.jpeg" alt="S. Indori Jewels" /></span>
   <span class="rule right"></span>
 </div>
 
@@ -1115,7 +1111,7 @@ main > section[id] { scroll-margin-top: 96px; }
 <!-- ============ SEAL DIVIDER ============ -->
 <div class="wrap seal-divider" aria-hidden="true">
   <span class="rule left"></span>
-  <span class="hallmark"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="0.5"/><circle cx="50" cy="6" r="1.6" fill="currentColor"/><circle cx="50" cy="94" r="1.6" fill="currentColor"/><circle cx="6" cy="50" r="1.6" fill="currentColor"/><circle cx="94" cy="50" r="1.6" fill="currentColor"/><text x="50" y="60" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="500" font-size="27" fill="currentColor">SIJ</text></svg></span>
+  <span class="hallmark"><img src="assets/logo-clean.jpeg" alt="S. Indori Jewels" /></span>
   <span class="rule right"></span>
 </div>
 
@@ -1245,7 +1241,7 @@ main > section[id] { scroll-margin-top: 96px; }
   <div class="wrap footer-top">
     <div class="footer-brand">
       <a class="brand" href="#home" aria-label="S. Indori Jewels &mdash; Home">
-      <span class="brand-logo">S. INDORI JEWELS</span>
+      <img class="brand-logo" src="assets/logo-clean.jpeg" alt="S. Indori Jewels" />
     </a>
       <p>A three-generation family jeweller, hand-crafting hallmarked gold and fine jewellery on CG Road, Ahmedabad.</p>
       <div class="footer-socials">
@@ -1327,8 +1323,7 @@ main > section[id] { scroll-margin-top: 96px; }
   }
 
   /* ---- Placeholder tiles for images without real files yet ---- */
-  var sealSVG =
-    '<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="27" fill="none" stroke="currentColor" stroke-width="0.5"/><text x="50" y="60" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="26" fill="currentColor">SIJ</text></svg>';
+  var sealSVG = '<img src="assets/logo-clean.jpeg" alt="" aria-hidden="true" />';
 
   function mountPlaceholder(img) {
     if (!img || img.dataset.phDone) return;
